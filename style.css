@@ -7,17 +7,21 @@ p {
 	font-size: 18px;
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	white-space: normal;
 }
 h1 {
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	white-space: normal;
 }
 h2 {
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	white-space: normal;
 }
 li {
 	font-size: 18px;
 	color: white;
 	font-family: 'Roboto', sans-serif;
+	white-space: normal;
 }
