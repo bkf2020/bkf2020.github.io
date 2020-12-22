@@ -25,3 +25,23 @@ li {
 	font-family: 'Roboto', sans-serif;
 	white-space: normal;
 }
+a:link {
+	color: #E69A8DFF;
+ 	background-color: transparent;
+  	text-decoration: none;
+}
+a:visited {
+  	color: #51c0f0;
+  	background-color: transparent;
+  	text-decoration: none;
+}
+a:hover {
+  	color: #f0cb51;
+  	background-color: transparent;
+  	text-decoration: underline;
+}
+a:active {
+  	color: yellow;
+  	background-color: transparent;
+  	text-decoration: underline;
+}
