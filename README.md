@@ -1,3 +1,3 @@
 # bkf2020.github.io
 
-This is a simple website that explains how to be kind for 2020!
+This is a website with useful tools! This hopefully benefits people!
