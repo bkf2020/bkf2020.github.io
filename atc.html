@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>AMC 10/12 Answer Checker</title>
 <script>
 var answers = new Array(25), 
     tot = 25;
+var wrong = [];
 
 function getCheckedValue( radioName ){
     var radios = document.getElementsByName( radioName ); // Get radio group by-name
@@ -20,17 +25,26 @@ function getScore(){
 	for (var i=0; i<tot; i++)
 		if(getCheckedValue("question"+i)==="Blank") score += 1.5;
 		else if(getCheckedValue("question"+i)===answers[i]) score += 6; // increment only
+		else wrong.push(i + 1); // wrong answer
 	return score;
+}
+
+function getWrong() {
+	var wrongreturn = "";
+	for(var i=0; i<wrong.length; i++)
+		if(i != wrong.length - 1) wrongreturn = wrongreturn.concat(wrong[i], ", ");
+		else wrongreturn = wrongreturn.concat(wrong[i]);
+	wrong = [];
+	return wrongreturn;
 }
 
 function returnScore(){
 	document.getElementById("finalscore").innerHTML = "Final score: " + getScore();
+	document.getElementById("wronganswers").innerHTML = "Questions you got wrong: " + getWrong();
 }
 </script>
-<html>
+</head>
 <body>
-<link rel="stylesheet" href="style.css">
-<title>AMC 10/12 Answer Checker</title>
 <h1>How does it work?</h1>
 <p>Glad you asked! The AMC 10/12 is a 25 question multiple choice test. This website let's you answer the 25 problems, and then put in the correct answers for those problems. After pressing "submit," you will see your result!</p>
 <h1>Credits: </h1>
@@ -367,5 +381,6 @@ function returnScore(){
 	<input type="radio" name="answer24" value="E">E<br>
 <button onclick="returnScore()">Submit</button>
 <h1 id="finalscore">Final score:</h1>
+<h1 id="wronganswers">Questions you got wrong:</h1>
 </body>
 </html>
