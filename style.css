@@ -3,30 +3,25 @@
 body {
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	white-space: normal;
 	background-color: purple;
 }
 p {
 	font-size: 18px;
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	white-space: normal;
 }
 h1 {
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	white-space: normal;
 }
 h2 {
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	white-space: normal;
 }
 li {
 	font-size: 18px;
 	color: white;
 	font-family: 'Roboto', sans-serif;
-	white-space: normal;
 }
 a:link {
 	color: #E69A8DFF;
@@ -60,4 +55,9 @@ button {
 	margin: 4px 2px;
 	cursor: pointer;
 	background-color: #E69A8DFF;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
