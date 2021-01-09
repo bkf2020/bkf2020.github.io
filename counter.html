@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<title>Counter for some task</title>
+<script src="counterscript.js"></script>
+</head>
+<body>
+	<h1>What's this?</h1>
+	<p>This lets you count how many times you did something. For example, this can be used to count how many times you solved problems.</p>
+	<h1>Credits</h1>
+	<ul>
+		<li><a href="https://www.w3schools.com/default.asp">Website with useful information!</a></li>
+		<li><a href="https://www.w3docs.com/snippets/javascript/how-to-get-the-value-of-text-input-field-using-javascript.html">Helps with inputing!</a></li>
+	</ul>
+	<center>
+		<h1 id="cname">Counter Name:</h1>
+		<h1 id="counter">0</h1>
+		<button type="button" onclick="increaseCounter()">Increase counter!</button>
+		<button type="button" onclick="decreaseCounter()">Decrease counter!</button>
+		
+		<h1>Type the new counter name:</h1>
+		<input type="text" id="cnameinput"><br>
+		<button type="button" onclick="changeName()">Submit New Name!</button>
+	</center>
+</body>
+</html>
