@@ -11,3 +11,6 @@ This is a website with useful tools! This hopefully benefits people!
   - Code is in the files: `atcnew.html`, `atcscript.js` and `style.css`
 - [Tool that lets you count how many times you did a task (like solving problems)!](https://bkf2020.github.io/counter)
   - Code is in the files `counter.html` and `counterscript.js`
+
+# LICENSE
+Licensed under the MIT license. View the LICENSE file for more details.
