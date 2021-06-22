@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
-<title>AMC 10/12 Answer Checker (New Version)</title>
-<script src="atcscript.js"></script>
+	<meta charset="utf-8" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>AMC 10/12 Answer Checker (New Version)</title>
+	<script src="atcscript.js"></script>
 </head>
 <body>
-<h1>What's the difference between this page and <a href="https://bkf2020.github.io/atc">the old page?</a> (<a href="https://bkf2020.github.io/atc">https://bkf2020.github.io/atc</a>)</h1>
-<p>The difference is that this page has the questions layed out in a grid. This may be harder to use when submitting answers, so this is available along with the older one, so users have a choice.</p>
-<h1>How does it work?</h1>
+<header>
+	<h1>bkf2020 ATC: AMC 10/12 Answer Checker (New Version)</h1>
+</header>
+<article>
+<h2>What's the difference between this page and the old page?</h2>
+	<p>
+	The difference is that this page has the questions layed out in a grid.
+	This may be harder to use when submitting answers, so this is available along
+	with the older one, so users have a choice.
+	</p>
+
+	<a href="https://bkf2020.github.io/atc">Link to the old page.</a>
+<h2>How does it work?</h2>
 <p>Glad you asked! The AMC 10/12 is a 25 question multiple choice test. This website let's you answer the 25 problems, and then put in the correct answers for those problems. After pressing "submit," you will see your result!</p>
-<h1>Credits: </h1>
+<h2>Credits: </h2>
 <ul>
 <li><a href="https://stackoverflow.com/questions/28403558/multiple-choice-quiz-getting-score/28403873#28403873">StackOverflow question that basically set everything up. Thanks Roko C. Buljan!</a></li>
 <li><a href="https://www.w3schools.com/">Website that helped with CSS, creating buttons, and so on... Pretty useful for me, at least!</a></li>
@@ -18,11 +32,13 @@
 <li><a href="https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid">StackOverflow thread that helped set up the grid so that each element had at least a certain width (200px).</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax()">MDM Web Doc on how to set the width of a grid element to be at least a certain value.</a></li>
 </ul>
-
-<h1>Your answers:</h1>
+<center>
+	<h2>Your answers:</h2>
+</center>
+</article>
 <main>
 	<div class="qbox1">
-	<h2>Question 1</h2>
+	<h3>Question 1</h3>
 	<input type="radio" name="question0" value="A">A<br>
 	<input type="radio" name="question0" value="B">B<br>
 	<input type="radio" name="question0" value="C">C<br>
@@ -31,7 +47,7 @@
 	<input type="radio" name="question0" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox2">
-	<h2>Question 2</h2>
+	<h3>Question 2</h3>
 	<input type="radio" name="question1" value="A">A<br>
 	<input type="radio" name="question1" value="B">B<br>
 	<input type="radio" name="question1" value="C">C<br>
@@ -40,7 +56,7 @@
 	<input type="radio" name="question1" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox3">
-	<h2>Question 3</h2>
+	<h3>Question 3</h3>
 	<input type="radio" name="question2" value="A">A<br>
 	<input type="radio" name="question2" value="B">B<br>
 	<input type="radio" name="question2" value="C">C<br>
@@ -49,7 +65,7 @@
 	<input type="radio" name="question2" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox4">
-	<h2>Question 4</h2>
+	<h3>Question 4</h3>
 	<input type="radio" name="question3" value="A">A<br>
 	<input type="radio" name="question3" value="B">B<br>
 	<input type="radio" name="question3" value="C">C<br>
@@ -58,7 +74,7 @@
 	<input type="radio" name="question3" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox5">
-	<h2>Question 5</h2>
+	<h3>Question 5</h3>
 	<input type="radio" name="question4" value="A">A<br>
 	<input type="radio" name="question4" value="B">B<br>
 	<input type="radio" name="question4" value="C">C<br>
@@ -67,7 +83,7 @@
 	<input type="radio" name="question4" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox6">
-	<h2>Question 6</h2>
+	<h3>Question 6</h3>
 	<input type="radio" name="question5" value="A">A<br>
 	<input type="radio" name="question5" value="B">B<br>
 	<input type="radio" name="question5" value="C">C<br>
@@ -76,7 +92,7 @@
 	<input type="radio" name="question5" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox7">
-	<h2>Question 7</h2>
+	<h3>Question 7</h3>
 	<input type="radio" name="question6" value="A">A<br>
 	<input type="radio" name="question6" value="B">B<br>
 	<input type="radio" name="question6" value="C">C<br>
@@ -85,7 +101,7 @@
 	<input type="radio" name="question6" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox8">
-	<h2>Question 8</h2>
+	<h3>Question 8</h3>
 	<input type="radio" name="question7" value="A">A<br>
 	<input type="radio" name="question7" value="B">B<br>
 	<input type="radio" name="question7" value="C">C<br>
@@ -94,7 +110,7 @@
 	<input type="radio" name="question7" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox9">
-	<h2>Question 9</h2>
+	<h3>Question 9</h3>
 	<input type="radio" name="question8" value="A">A<br>
 	<input type="radio" name="question8" value="B">B<br>
 	<input type="radio" name="question8" value="C">C<br>
@@ -103,7 +119,7 @@
 	<input type="radio" name="question8" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox10">
-	<h2>Question 10</h2>
+	<h3>Question 10</h3>
 	<input type="radio" name="question9" value="A">A<br>
 	<input type="radio" name="question9" value="B">B<br>
 	<input type="radio" name="question9" value="C">C<br>
@@ -112,7 +128,7 @@
 	<input type="radio" name="question9" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox11">
-	<h2>Question 11</h2>
+	<h3>Question 11</h3>
 	<input type="radio" name="question10" value="A">A<br>
 	<input type="radio" name="question10" value="B">B<br>
 	<input type="radio" name="question10" value="C">C<br>
@@ -121,7 +137,7 @@
 	<input type="radio" name="question10" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox12">
-	<h2>Question 12</h2>
+	<h3>Question 12</h3>
 	<input type="radio" name="question11" value="A">A<br>
 	<input type="radio" name="question11" value="B">B<br>
 	<input type="radio" name="question11" value="C">C<br>
@@ -130,7 +146,7 @@
 	<input type="radio" name="question11" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox13">
-	<h2>Question 13</h2>
+	<h3>Question 13</h3>
 	<input type="radio" name="question12" value="A">A<br>
 	<input type="radio" name="question12" value="B">B<br>
 	<input type="radio" name="question12" value="C">C<br>
@@ -139,7 +155,7 @@
 	<input type="radio" name="question12" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox14">
-	<h2>Question 14</h2>
+	<h3>Question 14</h3>
 	<input type="radio" name="question13" value="A">A<br>
 	<input type="radio" name="question13" value="B">B<br>
 	<input type="radio" name="question13" value="C">C<br>
@@ -148,7 +164,7 @@
 	<input type="radio" name="question13" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox15">
-	<h2>Question 15</h2>
+	<h3>Question 15</h3>
 	<input type="radio" name="question14" value="A">A<br>
 	<input type="radio" name="question14" value="B">B<br>
 	<input type="radio" name="question14" value="C">C<br>
@@ -157,7 +173,7 @@
 	<input type="radio" name="question14" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox16">
-	<h2>Question 16</h2>
+	<h3>Question 16</h3>
 	<input type="radio" name="question15" value="A">A<br>
 	<input type="radio" name="question15" value="B">B<br>
 	<input type="radio" name="question15" value="C">C<br>
@@ -166,7 +182,7 @@
 	<input type="radio" name="question15" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox17">
-	<h2>Question 17</h2>
+	<h3>Question 17</h3>
 	<input type="radio" name="question16" value="A">A<br>
 	<input type="radio" name="question16" value="B">B<br>
 	<input type="radio" name="question16" value="C">C<br>
@@ -175,7 +191,7 @@
 	<input type="radio" name="question16" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox18">
-	<h2>Question 18</h2>
+	<h3>Question 18</h3>
 	<input type="radio" name="question17" value="A">A<br>
 	<input type="radio" name="question17" value="B">B<br>
 	<input type="radio" name="question17" value="C">C<br>
@@ -184,7 +200,7 @@
 	<input type="radio" name="question17" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox19">
-	<h2>Question 19</h2>
+	<h3>Question 19</h3>
 	<input type="radio" name="question18" value="A">A<br>
 	<input type="radio" name="question18" value="B">B<br>
 	<input type="radio" name="question18" value="C">C<br>
@@ -193,7 +209,7 @@
 	<input type="radio" name="question18" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox20">
-	<h2>Question 20</h2>
+	<h3>Question 20</h3>
 	<input type="radio" name="question19" value="A">A<br>
 	<input type="radio" name="question19" value="B">B<br>
 	<input type="radio" name="question19" value="C">C<br>
@@ -202,7 +218,7 @@
 	<input type="radio" name="question19" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox21">
-	<h2>Question 21</h2>
+	<h3>Question 21</h3>
 	<input type="radio" name="question20" value="A">A<br>
 	<input type="radio" name="question20" value="B">B<br>
 	<input type="radio" name="question20" value="C">C<br>
@@ -211,7 +227,7 @@
 	<input type="radio" name="question20" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox22">
-	<h2>Question 22</h2>
+	<h3>Question 22</h3>
 	<input type="radio" name="question21" value="A">A<br>
 	<input type="radio" name="question21" value="B">B<br>
 	<input type="radio" name="question21" value="C">C<br>
@@ -220,7 +236,7 @@
 	<input type="radio" name="question21" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox23">
-	<h2>Question 23</h2>
+	<h3>Question 23</h3>
 	<input type="radio" name="question22" value="A">A<br>
 	<input type="radio" name="question22" value="B">B<br>
 	<input type="radio" name="question22" value="C">C<br>
@@ -229,7 +245,7 @@
 	<input type="radio" name="question22" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox24">
-	<h2>Question 24</h2>
+	<h3>Question 24</h3>
 	<input type="radio" name="question23" value="A">A<br>
 	<input type="radio" name="question23" value="B">B<br>
 	<input type="radio" name="question23" value="C">C<br>
@@ -238,7 +254,7 @@
 	<input type="radio" name="question23" value="Blank" checked>Blank<br>
 	</div>
 	<div class="qbox25">
-	<h2>Question 25</h2>
+	<h3>Question 25</h3>
 	<input type="radio" name="question24" value="A">A<br>
 	<input type="radio" name="question24" value="B">B<br>
 	<input type="radio" name="question24" value="C">C<br>
@@ -247,10 +263,15 @@
 	<input type="radio" name="question24" value="Blank" checked>Blank<br>
 	</div>
 </main>
-<h1>Correct answers (only submit after the test):</h1>
+<article>
+	<br/>
+	<center>
+	<h2>Correct answers (only input after the test):</h2>
+	</center>
+</article>
 <main>
 	<div class="abox1">
-	<h2>Question 1</h2>
+	<h3>Question 1</h3>
 	<input type="radio" name="answer0" value="A">A<br>
 	<input type="radio" name="answer0" value="B">B<br>
 	<input type="radio" name="answer0" value="C">C<br>
@@ -259,7 +280,7 @@
 	<input type="radio" name="answer0" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox2">
-	<h2>Question 2</h2>
+	<h3>Question 2</h3>
 	<input type="radio" name="answer1" value="A">A<br>
 	<input type="radio" name="answer1" value="B">B<br>
 	<input type="radio" name="answer1" value="C">C<br>
@@ -268,7 +289,7 @@
 	<input type="radio" name="answer1" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox3">
-	<h2>Question 3</h2>
+	<h3>Question 3</h3>
 	<input type="radio" name="answer2" value="A">A<br>
 	<input type="radio" name="answer2" value="B">B<br>
 	<input type="radio" name="answer2" value="C">C<br>
@@ -277,7 +298,7 @@
 	<input type="radio" name="answer2" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox4">
-	<h2>Question 4</h2>
+	<h3>Question 4</h3>
 	<input type="radio" name="answer3" value="A">A<br>
 	<input type="radio" name="answer3" value="B">B<br>
 	<input type="radio" name="answer3" value="C">C<br>
@@ -286,7 +307,7 @@
 	<input type="radio" name="answer3" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox5">
-	<h2>Question 5</h2>
+	<h3>Question 5</h3>
 	<input type="radio" name="answer4" value="A">A<br>
 	<input type="radio" name="answer4" value="B">B<br>
 	<input type="radio" name="answer4" value="C">C<br>
@@ -295,7 +316,7 @@
 	<input type="radio" name="answer4" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox6">
-	<h2>Question 6</h2>
+	<h3>Question 6</h3>
 	<input type="radio" name="answer5" value="A">A<br>
 	<input type="radio" name="answer5" value="B">B<br>
 	<input type="radio" name="answer5" value="C">C<br>
@@ -304,7 +325,7 @@
 	<input type="radio" name="answer5" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox7">
-	<h2>Question 7</h2>
+	<h3>Question 7</h3>
 	<input type="radio" name="answer6" value="A">A<br>
 	<input type="radio" name="answer6" value="B">B<br>
 	<input type="radio" name="answer6" value="C">C<br>
@@ -313,7 +334,7 @@
 	<input type="radio" name="answer6" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox8">
-	<h2>Question 8</h2>
+	<h3>Question 8</h3>
 	<input type="radio" name="answer7" value="A">A<br>
 	<input type="radio" name="answer7" value="B">B<br>
 	<input type="radio" name="answer7" value="C">C<br>
@@ -322,7 +343,7 @@
 	<input type="radio" name="answer7" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox9">
-	<h2>Question 9</h2>
+	<h3>Question 9</h3>
 	<input type="radio" name="answer8" value="A">A<br>
 	<input type="radio" name="answer8" value="B">B<br>
 	<input type="radio" name="answer8" value="C">C<br>
@@ -331,7 +352,7 @@
 	<input type="radio" name="answer8" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox10">
-	<h2>Question 10</h2>
+	<h3>Question 10</h3>
 	<input type="radio" name="answer9" value="A">A<br>
 	<input type="radio" name="answer9" value="B">B<br>
 	<input type="radio" name="answer9" value="C">C<br>
@@ -340,7 +361,7 @@
 	<input type="radio" name="answer9" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox11">
-	<h2>Question 11</h2>
+	<h3>Question 11</h3>
 	<input type="radio" name="answer10" value="A">A<br>
 	<input type="radio" name="answer10" value="B">B<br>
 	<input type="radio" name="answer10" value="C">C<br>
@@ -349,7 +370,7 @@
 	<input type="radio" name="answer10" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox12">
-	<h2>Question 12</h2>
+	<h3>Question 12</h3>
 	<input type="radio" name="answer11" value="A">A<br>
 	<input type="radio" name="answer11" value="B">B<br>
 	<input type="radio" name="answer11" value="C">C<br>
@@ -358,7 +379,7 @@
 	<input type="radio" name="answer11" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox13">
-	<h2>Question 13</h2>
+	<h3>Question 13</h3>
 	<input type="radio" name="answer12" value="A">A<br>
 	<input type="radio" name="answer12" value="B">B<br>
 	<input type="radio" name="answer12" value="C">C<br>
@@ -367,7 +388,7 @@
 	<input type="radio" name="answer12" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox14">
-	<h2>Question 14</h2>
+	<h3>Question 14</h3>
 	<input type="radio" name="answer13" value="A">A<br>
 	<input type="radio" name="answer13" value="B">B<br>
 	<input type="radio" name="answer13" value="C">C<br>
@@ -376,7 +397,7 @@
 	<input type="radio" name="answer13" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox15">
-	<h2>Question 15</h2>
+	<h3>Question 15</h3>
 	<input type="radio" name="answer14" value="A">A<br>
 	<input type="radio" name="answer14" value="B">B<br>
 	<input type="radio" name="answer14" value="C">C<br>
@@ -385,7 +406,7 @@
 	<input type="radio" name="answer14" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox16">
-	<h2>Question 16</h2>
+	<h3>Question 16</h3>
 	<input type="radio" name="answer15" value="A">A<br>
 	<input type="radio" name="answer15" value="B">B<br>
 	<input type="radio" name="answer15" value="C">C<br>
@@ -394,7 +415,7 @@
 	<input type="radio" name="answer15" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox17">
-	<h2>Question 17</h2>
+	<h3>Question 17</h3>
 	<input type="radio" name="answer16" value="A">A<br>
 	<input type="radio" name="answer16" value="B">B<br>
 	<input type="radio" name="answer16" value="C">C<br>
@@ -403,7 +424,7 @@
 	<input type="radio" name="answer16" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox18">
-	<h2>Question 18</h2>
+	<h3>Question 18</h3>
 	<input type="radio" name="answer17" value="A">A<br>
 	<input type="radio" name="answer17" value="B">B<br>
 	<input type="radio" name="answer17" value="C">C<br>
@@ -412,7 +433,7 @@
 	<input type="radio" name="answer17" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox19">
-	<h2>Question 19</h2>
+	<h3>Question 19</h3>
 	<input type="radio" name="answer18" value="A">A<br>
 	<input type="radio" name="answer18" value="B">B<br>
 	<input type="radio" name="answer18" value="C">C<br>
@@ -421,7 +442,7 @@
 	<input type="radio" name="answer18" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox20">
-	<h2>Question 20</h2>
+	<h3>Question 20</h3>
 	<input type="radio" name="answer19" value="A">A<br>
 	<input type="radio" name="answer19" value="B">B<br>
 	<input type="radio" name="answer19" value="C">C<br>
@@ -430,7 +451,7 @@
 	<input type="radio" name="answer19" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox21">
-	<h2>Question 21</h2>
+	<h3>Question 21</h3>
 	<input type="radio" name="answer20" value="A">A<br>
 	<input type="radio" name="answer20" value="B">B<br>
 	<input type="radio" name="answer20" value="C">C<br>
@@ -439,7 +460,7 @@
 	<input type="radio" name="answer20" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox22">
-	<h2>Question 22</h2>
+	<h3>Question 22</h3>
 	<input type="radio" name="answer21" value="A">A<br>
 	<input type="radio" name="answer21" value="B">B<br>
 	<input type="radio" name="answer21" value="C">C<br>
@@ -448,7 +469,7 @@
 	<input type="radio" name="answer21" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox23">
-	<h2>Question 23</h2>
+	<h3>Question 23</h3>
 	<input type="radio" name="answer22" value="A">A<br>
 	<input type="radio" name="answer22" value="B">B<br>
 	<input type="radio" name="answer22" value="C">C<br>
@@ -457,7 +478,7 @@
 	<input type="radio" name="answer22" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox24">
-	<h2>Question 24</h2>
+	<h3>Question 24</h3>
 	<input type="radio" name="answer23" value="A">A<br>
 	<input type="radio" name="answer23" value="B">B<br>
 	<input type="radio" name="answer23" value="C">C<br>
@@ -466,7 +487,7 @@
 	<input type="radio" name="answer23" value="Blank" checked>Blank<br>
 	</div>
 	<div class="abox25">
-	<h2>Question 25</h2>
+	<h3>Question 25</h3>
 	<input type="radio" name="answer24" value="A">A<br>
 	<input type="radio" name="answer24" value="B">B<br>
 	<input type="radio" name="answer24" value="C">C<br>
@@ -475,8 +496,16 @@
 	<input type="radio" name="answer24" value="Blank" checked>Blank<br>
 	</div>
 </main>
+
+<article>
+<center>
 <button onclick="returnScore()">Submit</button>
-<h1 id="finalscore">Final score:</h1>
-<h1 id="wronganswers">Questions you got wrong:</h1>
+<h3 id="finalscore">Final score:</h3>
+<h3 id="wronganswers">Questions you got wrong:</h3>
+</center>
+</article>
+<footer>
+	<a href=".">bkf2020.github.io</a>
+</footer>
 </body>
 </html>
