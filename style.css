@@ -60,35 +60,8 @@ a:active {
   	color: gold;
   	text-decoration: underline;
 }
-button {
-	border: none;
-	color: black;
-	padding: 10px 18px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	font-family: Helvetica, arial, verdana, sans-serif;
-	margin: 4px 2px;
-	cursor: pointer;
-	background-color: #ffce75;
-}
-
-main {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	max-width: 60em;
-	margin-left: auto;
-	margin-right: auto;
-}
-#finalscore, #wronganswers {
-	color: #f5f5f5;
-}
-#cname, #cnameh2 {
-	color: lightgreen;
-}
-#counter {
-	color: #f5f5f5;
+#current {
+	color: springgreen;
 }
 @media screen and (max-width: 400px) {
 	body {
