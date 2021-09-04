@@ -1,0 +1,22 @@
+name: Update Problemsets Daily Manually
+on: [workflow_dispatch]
+jobs:
+  Update-Problemsets:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job runs everyday at 00:00 UTC"
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Updating problemsets with gen.sh
+        run: sh ${{ github.workspace }}/gen.sh
+      - name: auto commit changes on github
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Updating problemsets daily
+      - name: git fetch
+        run: git fetch --prune
+      - name: auto commit changes on codeberg
+        run: git push --prune https://codeberg.org/bkf2020/amcgen.git
+      - name: auto commit changes on gitlab
+        run: git push --prune https://gitlab.com/bkf2020/amcgen.git
+      - run: echo "This job's status is ${{ job.status }}."
