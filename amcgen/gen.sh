@@ -11,6 +11,8 @@ mkdir -p $AMC8DIR
 mkdir -p $AMC10DIR
 mkdir -p $AMC12DIR
 
+cat templates/index_template_upper.html > index.html
+
 for TEST in aime amc8 amc10 amc12
 do
 	for LEVEL in easy medium hard veryhard
@@ -18,8 +20,6 @@ do
 		CHOICES_PATH=choices/$TEST/$LEVEL
 		PROBLEMS_PATH=choices/$TEST/$LEVEL"_names"
 		TEMPLATE_PATH=templates/$TEST/$LEVEL".html"
-		PROBLEMSET_FILE=$TEST/$DATE/$LEVEL".html"
-		touch $PROBLEMSET_FILE
 
 		LINE_NUMBERS=$(wc -l < $CHOICES_PATH)
 		shuf -i 1-$LINE_NUMBERS -n 5 > out
@@ -35,11 +35,14 @@ do
 		PRO5=$(sed -n $(sed -n '5p' out)p $PROBLEMS_PATH)
 		export URL1; export URL2; export URL3; export URL4; export URL5; \
 		export PRO1; export PRO2; export PRO3; export PRO4; export PRO5; \
-		envsubst < $TEMPLATE_PATH > $PROBLEMSET_FILE; \
-		export AIMEDIR; export AMC8DIR; export AMC10DIR; export AMC12DIR; \
-		envsubst < templates/index_template.html > index.html; \
+		envsubst < $TEMPLATE_PATH >> index.html; \
+		mkdir --parents $DATE
+		touch $DATE/index.html
+		cp index.html $DATE/index.html
 	done
 done
+
+cat templates/index_template_lower.html >> index.html
 
 # delete out file
 rm out
