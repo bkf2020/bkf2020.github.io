@@ -1,15 +1,6 @@
 #!/bin/sh
 
 DATE=$(date "+%Y/%m/%d")
-AIMEDIR="aime/"$DATE
-AMC8DIR="amc8/"$DATE
-AMC10DIR="amc10/"$DATE
-AMC12DIR="amc12/"$DATE
-
-mkdir -p $AIMEDIR
-mkdir -p $AMC8DIR
-mkdir -p $AMC10DIR
-mkdir -p $AMC12DIR
 
 cat templates/index_template_upper.html > index.html
 
