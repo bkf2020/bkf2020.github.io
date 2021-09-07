@@ -44,5 +44,40 @@ done
 
 cat templates/index_template_lower.html >> index.html
 
+YEAR=$(date "+%Y")
+MONTH2=$(date "+%m")
+
+if [ $(date "+%m/%d") = "01/01" ]; then
+	LOCATION="${YEAR}/archive"
+	ENTRY="${YEAR}"
+	cat templates/archive/general_archive_header.html > archive.html
+	export YEAR; export LOCATION; export ENTRY; \
+	envsubst < templates/archive/general_archive_entry.html >> general_archive_entries; \
+	cat general_archive_entries >> archive.html
+	cat templates/archive/general_archive_footer.html >> archive.html
+fi
+
+if [ $(date "+%d") = "01" ]; then
+	LOCATION="${MONTH2}/archive"
+	MONTH=$(date "+%B")
+	ENTRY="${MONTH} ${YEAR}"
+	export MONTH; export YEAR; \
+	envsubst < templates/archive/yearly_archive_header.html > ${YEAR}/archive.html; \
+	envsubst < templates/archive/yearly_archive_entry.html >> ${YEAR}/archive_entries.html; \
+	cat ${YEAR}/archive_entries.html >> ${YEAR}/archive.html
+	cat templates/archive/yearly_archive_footer.html >> ${YEAR}/archive.html
+fi
+
+DATE2=$(date "+%B %d, %Y")
+LOCATION=$(date "+%d")
+ENTRY="${DATE2} (${DATE})"
+MONTH=$(date "+%B")
+export LOCATION; export ENTRY; export MONTH; export YEAR; \
+envsubst < templates/archive/monthly_archive_header.html > ${YEAR}/${MONTH2}/archive.html; \
+envsubst < templates/archive/monthly_archive_entry.html >> ${YEAR}/${MONTH2}/archive_entries.html; \
+cat ${YEAR}/${MONTH2}/archive_entries.html >> ${YEAR}/${MONTH2}/archive.html
+cat templates/archive/monthly_archive_footer.html >> ${YEAR}/${MONTH2}/archive.html
+
+
 # delete out file
 rm out
