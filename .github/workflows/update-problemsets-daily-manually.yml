@@ -1,0 +1,22 @@
+name: Update Problemsets Daily Manually
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ssh-key: '${{ secrets.SSH }}'
+      - run: |
+          cd amcgen
+          ./gen.sh
+          cd ..
+          git config user.name bkf2020
+          git config user.email bkf2020@users.noreply.github.com
+          git add amcgen
+          git commit -m "Updating problemsets daily"
+          git push
+          git push --prune git@gitlab.com:bkf2020/bkf2020.gitlab.io.git
+          git push --prune git@codeberg.org:bkf2020/pages.git
+     - run: echo "This job's status is ${{ job.status }}."
+     
