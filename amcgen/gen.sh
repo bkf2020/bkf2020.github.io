@@ -52,7 +52,7 @@ if [ $(date "+%d") = "01" ]; then
 	LOCATION="${MONTH2}/archive"
 	MONTH=$(date "+%B")
 	ENTRY="${MONTH} ${YEAR}"
-	export MONTH; export YEAR; \
+	export LOCATION; export ENTRY; export MONTH; export YEAR; \
 	envsubst < templates/archive/yearly_archive_header.html > ${YEAR}/archive.html; \
 	envsubst < templates/archive/yearly_archive_entry.html >> ${YEAR}/archive_entries.html; \
 	cat ${YEAR}/archive_entries.html >> ${YEAR}/archive.html
