@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+\title{Problem}
+\author{bkf2020}
+\date{Updated on \today}
+
+\hypersetup{
+    urlcolor=blue,
+}
+
+\begin{document}
+\maketitle
+
+\section*{LICENSE}
+Under \href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0}
+
+\section*{Commentary}
+\end{document}
