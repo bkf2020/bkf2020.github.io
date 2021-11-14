@@ -20,7 +20,7 @@ Under \href{https://creativecommons.org/publicdomain/zero/1.0/}{CC0}
 
 \section*{Commentary}
 
-Originally, I got $C$ as the answer. This was because I thought $f(x) = f(-x)$ since I incorrectly assumed $\lfloor -x \rfloor = -\lfloor x\rfloor - 1.$ This is false for integers.
+Originally, I got $C$ as the answer. This was because I thought $f(x) = f(-x)$ since I incorrectly assumed $\lfloor -x \rfloor = -\lfloor x\rfloor - 1$ for $x \ge 0.$ This is false for integers.
 
 The correct solution:
 
@@ -30,16 +30,16 @@ f(x) &= |\lfloor x \rfloor| - |\lfloor 1 - x \rfloor| \\ &= |\lfloor x \rfloor| 
 \end{align*}
 
 Then, assume $x < 0$ and $x$ is not an integer. To deal with this, we set $y = -x$ and we find $f(-y),$ where
-$y > 0$ and y is not an integer
+$y > 0$ and $y$ is not an integer
 \begin{align*}
-f(-y) &= |\lfloor -y\rfloor| - |\lfloor 1 + y \rfloor| \\ &= |-\lfloor y\rfloor - 1| - |\lfloor y \rfloor| + 1\\ &= 0.
+f(-y) &= |\lfloor -y\rfloor| - |\lfloor 1 + y \rfloor| \\ &= |-\lfloor y\rfloor - 1| - |\lfloor y \rfloor + 1|\\ &= 0.
 \end{align*}
 
 So when $x$ is not an integer $f(x) = 0.$
 
 Now, when $x$ is an integer, we have $$f(x) = |\lfloor x \rfloor| - |1 + \lfloor -x \rfloor| = |x| - |1 - x| = |x| - |x - 1|.$$ If $x > 0 \Longrightarrow x \ge 1, f(x) = 1$ and if $x \le 0, f(x) = -1.$
 
-So finally, we find that at $(1/2, 0)$ has symmetry because $f(1/2 + a) + f(1/2 - a) = 0$ where $1/2 + a$ and $1/2 - a$ are integers.
+So finally, we find that at $(1/2, 0), f(x)$ has symmetry because $f(1/2 + a) + f(1/2 - a) = 0$ where $1/2 + a$ and $1/2 - a$ are integers.
 
 Examples: $a = 1/2 \Longrightarrow f(1) + f(0) = 0, a = 3/2 \Longrightarrow f(2) + f(-1) = 0.$
 \end{document}
