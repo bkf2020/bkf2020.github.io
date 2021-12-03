@@ -85,6 +85,9 @@ a:active {
   	color: gold;
   	text-decoration: underline;
 }
+.so a {
+	color: blue;
+}
 #current {
 	color: springgreen;
 }
