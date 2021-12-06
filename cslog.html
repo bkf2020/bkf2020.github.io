@@ -105,27 +105,45 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=714">USACO Why Did the Cow Cross the Road</a></th>
-				<th class="sa">Seriously Attempted</th>
+				<th class="so">Solved</th>
 				<th>
-					Tried solving this problem by sorting the cows by their endpoint in increasing
+					<p>
+					Before: Tried solving this problem by sorting the cows by their endpoint in increasing
 					order. Then, each cow got the earliest chicken possible. Getting WA on every
 					test case except 3, and can't find a counterexample yet.
+					</p>
+					<p>
+					After: used a multiset instead of a set, since chickens may start at the same time.
+					Got accepted.
+					</p>
 				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=1038">USACO Social Distancing</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Binary searched on the value of D. My check function had a minor error.
+					It only updated the location of a cow IF there was no interval for the cow to be in.
+					It only needed me to swap the position of ONE line of code to fix it.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=419">USACO Sabotage</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					Had no idea on how to solve this problem within the time limits.
+					Came up with a O(N^2) but not an O(N) or O(NlogN). Do not current
+					understand the solution, and I feel it is too hard.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=597">USACO Angry Cows</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					Tried getting a solution similar to the silver version of the problem,
+					but it does not work. USACO Guide says this is a hard problem,
+					so it may not be worth doing in my current level.
+				</th>
 			</tr>
 		</table>
 		</details>
