@@ -127,8 +127,21 @@
 						USACO Wormhole Sort
 					</a>
 				</th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					As given in the problem input, p[i] is the ith cow.
+					I let i &rarr; p[i] be an edge. Then, the permutation
+					is a graph made up of multiple cycles that are unconnected.
+					Then, I binary searched on the answer. From the swaps,
+					I made a graph where a[i] &rarr; b[i] was an edge if w[i] is larger than or equal to the answer we are
+					checking. This was an UNDIRECTED graph, and I FORGOT to add b[i] &rarr; a[i] as an edge.
+					To find the answer, I found the component each node was in in the undirected graph created
+					by the edges a[i] &rarr; b[i] for 1 &le; i &le; M.
+					Each node in a cycle must have the same component.
+
+					<a href="http://www.usaco.org/current/data/sol_wormsort_silver_jan20.html">
+						The USACO solution is similiar to this one and the wording is more clear</a>.
+				</th>
 			</tr>
 			<tr>
 				<th>
