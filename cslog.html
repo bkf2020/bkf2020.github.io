@@ -82,13 +82,25 @@
 			<tr>
 			<tr>
 				<th><a href="https://www.spoj.com/problems/HAYBALE/">USACO Haybale Stacking</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Did a prefix sum solution by finding the
+					number of haybales in spot i using prefix sums.
+					Got seg fault probably because the stack size is too small?
+					I changed from using arrays to vector and it worked fine...
+					Probably an issue with SPOJ.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://cses.fi/problemset/task/1085">CSES Array Division</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					I binary searched on the maximum sum of all subarrays.
+					To check if a certain sum is possible, I made a new subarray
+					every time the current subarray exceeded the sum we are checking.
+					I didn't consider the case where a value in a[i] is greater
+					than the sum we are checking.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=419">USACO Sabotage</a></th>
@@ -97,18 +109,42 @@
 			</tr>
 			<tr>
 				<th><a href="https://codeforces.com/contest/782/problem/B">Codeforces The Meeting Place Cannot Be Changed</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Had some trouble implementing the eps binary search.
+					I think the problem I had was using <code>double</code>
+					instead of <code>long double</code>.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=920">USACO The Great Revegetation</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					The answer to this problem was 2 to the power of the
+					number of connected components. I output zero if
+					there is an edge from cows u to v that requires u and v
+					to have DIFFERENT colors and the SAME color. However,
+					there could be a cycle which also makes the answer zero.
+					So, I needed to try to paint the cows and see if there
+					were any contradictions.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=716">USACO Why Did the Cow Cross the Road III</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					<p>
+					The first solution I had was testing if a path between any two
+					cows existed. After knowing this was a floodfill problem, I realized
+					that I could just find which cows a cow can visit.
+					</p>
+					<p>
+					However, I also misread the problem and didn't realize the roads
+					were between ADJACENT cows. Furthermore, I didn't realize there
+					could be MULTIPLE roads in each row or column. I thought there was
+					at most one road for each row or column.
+					</p>
+				</th>
 			</tr>
 		</table>
 		</details>
