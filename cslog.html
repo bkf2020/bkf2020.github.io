@@ -176,18 +176,39 @@
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1110">USACO Comfortable Cows</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					I basically reimplemented the USACO solution.
+					That solution uses a queue for each cow we add.
+					For each cow we add, we check if it has 3 adjacent cows
+					and add a cow as necessary. We also check each of its
+					adjacent cows to see if more cows need to be added.
+
+					I thought in the most extreme case,
+					the cows would be a diamond centered
+					at the origin, but it should be a diamond centered
+					at (500, 500).
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1111">USACO Year of the Cow</a></th>
-				<th class="ns">Not started</th>
+				<th class="so">Solved</th>
 				<th></th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1112">USACO Just Green Enough</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					I thought of computing the number of subgrids
+					where every cell is at least 100 and the number
+					of subgrids where every cell is at least 101.
+					However, I didn't know how to compute these numbers.
+					To do this, you consider the subgrids that start at row i
+					and row j. You check each column between rows i and j to see
+					if each value is at least 100 or 101.
+					A group of x consecutive columns contributes x * (x + 1) / 2
+					subgrids to the answer.
+				</th>
 			</tr>
 		</table>
 		</details>
