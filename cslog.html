@@ -146,13 +146,42 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=622">USACO Circular Barn Revisited</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Originally thought of solving by
+					considering all possible doors to choose,
+					but that was too slow. Then, I thought of doing dp
+					by the number of doors we have, but I didn't
+					consider converting this problem into 2D
+					and rotating to get the correct cases.
+					<a href="http://www.usaco.org/current/data/sol_cbarn2_gold_feb16.html">
+						I used the USACO Solution</a>.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://dmoj.ca/problem/ioi04p4">IOI 2004 Phidias</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					I thought of choosing one of the desired plates to remove
+					and then somehow doing dp on that.
+					<a href="https://usaco.guide/problems/dmoj-phidias/solution">
+						The correct solution on USACO guide</a>
+					does dp based on the size of the rectangle.
+					It works since each a slab of marble must have
+					one vertical cut or one horizontal cut. So a marble
+					of size n by m must be made up one of the following:
+					<ul style="text-align: left;">
+						<li>
+							a marble of size <i>a</i> by <i>m</i>
+							and a marble of size <i>n - a</i> by <i>m</i>
+						</li>
+						<li>
+							a marble of size <i>n</i> by <i>b</i>
+							and a marble of size <i>n</i> by <i>m - b</i>
+						</li>
+					</ul>
+					where 1 &le; a &le; n - 1 and 1 &le; b &le; m - 1.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=815">USACO Taming the Herd</a></th>
