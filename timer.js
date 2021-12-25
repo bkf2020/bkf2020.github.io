@@ -56,7 +56,10 @@ function startTimer() {
 		timerInterval = setInterval(changeTimer, 1000);
 
 	} else {
-		alert("Invalid time! You can have at most 99 hours, 99 minutes and 99 seconds!");
+		var message = "Invalid time! You can have at least 0 hours,";
+		message += " 0 mintues, and 0 seconds and at most 99 hours,";
+		message += " 99 minutes and 99 seconds!";
+		alert(message);
 	}
 }
 
