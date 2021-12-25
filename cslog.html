@@ -185,18 +185,33 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=815">USACO Taming the Herd</a></th>
-				<th class="ns">Not started</th>
+				<th class="so">Solved</th>
 				<th></th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=971">USACO Moortal Cowmbat</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					Had no idea on how to find the minimum cost
+					to from letter i to letter j.
+					Need to use Floyd-Warshall, which I will do problems of next week.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=839">USACO Talent Show</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="sa">Seriously Attempted</th>
+				<th>
+					My first solution was to greedily add the cows with the highest ratios,
+					but I think it doesn't work because adding a cow with a lower ratio and lower weight
+					might result in a higher overall ratio. As a result, I used
+					<a href="http://www.usaco.org/current/data/sol_talent_gold_open18.html">
+						the USACO solution</a>, but I don't understand why <code>dp[k1]</code>
+					will always have the optimal value, because <code>dp[k]</code> can be updated
+					and it doesn't guarantee <code>dp[k1]</code> gets updated.
+					I believe if <code>dp[k]</code> can get updated by a cow with weight w,
+					<code>dp[k1]</code> can get updated for the same cow with weight w by using
+					<code>dp[k1 - w]</code> (or <code>dp[W]</code> if k1 = W).
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://oj.uz/problem/view/NOI18_knapsack">NOI 18 Knapsack</a></th>
