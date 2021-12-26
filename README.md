@@ -1,7 +1,7 @@
 # bkf2020.github.io
 
 # LICENSE
-Licensed under CC0.
+See LICENSE file for more details.
 
 # Mirrors
 This website is available in the following places:
