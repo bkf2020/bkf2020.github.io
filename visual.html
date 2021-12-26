@@ -19,8 +19,10 @@
 		</style>
 	</head>
 	<body>
-		<script src="https://threejs.org/build/three.js"></script>
-		<script>
+		<script type="module">
+			import * as THREE from 'https://cdn.skypack.dev/three';
+			import { ConvexGeometry } from 'https://cdn.skypack.dev/three/examples/jsm/geometries/ConvexGeometry.js';
+			
 			const renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -34,58 +36,46 @@
 			scene.background = new THREE.Color ( 0x200027 );
 
 			const points = [];
-			points.push(  - 10, 0, 0  );
-			points.push(  0, 10, 0  );
-			points.push( 10, 0, 0  );
-			points.push( 10, 1, 0  );
-			points.push( 9, 0, 5.3  );
-			points.push( 8, 0, 0 ) ;
-			points.push( 1, 7, 0 ) ;
-			points.push( 1, 5, 0 ) ;
-			points.push( 2, 8, 3 ) ;
-			points.push( 5, 0, 0 ) ;
-			points.push( 7, 4, 0 ) ;
-			points.push( 3, 4, 4 ) ;
-			points.push( 5, 6, 0 ) ;
-			points.push( 4, 2, 0 ) ;
+			const pointsConvex = [];
+			var problemsSolved = 65;
+			for(var i = 0; i < problemsSolved; i++) {
+				// random points on x^3 + y^3 + z = 1000
+				var x = Math.random() * 40 - 20;
+				var y = Math.random() * 40 - 20;
+				var z = Math.cbrt(1000 - x*x*x - y*y*y);
+
+				points.push(x, y, z);
+				pointsConvex.push(new THREE.Vector3(x, y, z));
+			}
 
 			const colors = [];
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
-			colors.push(69/255, 196/255, 103/255);
+			for(var i = 0; i < problemsSolved; i++) {
+				var r = Math.random();
+				var g = Math.random();
+				var b = Math.random();
+				colors.push(r, g, b);
+			}
 
 			const geometry = new THREE.BufferGeometry();
 			geometry.setAttribute( 'position', new THREE.Float32BufferAttribute(points, 3) );
 			geometry.setAttribute( 'color', new THREE.Float32BufferAttribute(colors, 3) );
-			geometry.computeBoundingSphere();
 
-			const material = new THREE.LineBasicMaterial( { color: 0xffffff } );
-			const line = new THREE.Line( geometry, material );
-			const material2 = new THREE.PointsMaterial( { vertexColors: true } );
-
-			const pointscollection = new THREE.Points( geometry, material2 );
-			scene.add( line );
+			const material = new THREE.PointsMaterial( { vertexColors: true } );
+			const pointscollection = new THREE.Points( geometry, material );
+			
+			const convexGeometry = new ConvexGeometry( pointsConvex );
+			const materialMesh = new THREE.MeshBasicMaterial( { color: 0x00ff00, opacity: 0.1, transparent: true } );
+			const mesh = new THREE.Mesh( convexGeometry, materialMesh );
+			
 			scene.add( pointscollection );
+			scene.add( mesh );
+
 
 
 			function animate() {
 				requestAnimationFrame( animate );
-
-				//line.rotation.x += 0.05;
-				line.rotation.y += 0.005;
-				//pointscollection.rotation.x += 0.005;
 				pointscollection.rotation.y += 0.005;
+				mesh.rotation.y += 0.005;
 				renderer.render( scene, camera );
 			};
 
