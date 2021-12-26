@@ -10,6 +10,6 @@ total=$(echo "${math} + ${cs}" | bc)
 
 grep -F 'var problemsSolved' visual.html > curr
 echo "var problemsSolved = ${total};" > new
-diff -w curr new || echo -e "\033[0;31mYou need to update visual.html! \033[0m"
+diff -w curr new || echo -e "\033[0;31mYou need to update visual.html with ${total} problems solved! \033[0m"
 
 rm curr new
