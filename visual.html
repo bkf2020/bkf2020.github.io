@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bkf2020 visualizer: visualize the problems I solved using three.js</title>
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<style>
+			#info {
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				text-align: center;
+				z-index: 100;
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="https://threejs.org/build/three.js"></script>
+		<script>
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+
+			document.body.appendChild( renderer.domElement );
+
+			const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
+			camera.position.set( 0, 0, 100 );
+			camera.lookAt( 0, 0, 0 );
+
+			const scene = new THREE.Scene();
+			scene.background = new THREE.Color ( 0x200027 );
+
+			const points = [];
+			points.push(  - 10, 0, 0  );
+			points.push(  0, 10, 0  );
+			points.push( 10, 0, 0  );
+			points.push( 10, 1, 0  );
+			points.push( 9, 0, 5.3  );
+			points.push( 8, 0, 0 ) ;
+			points.push( 1, 7, 0 ) ;
+			points.push( 1, 5, 0 ) ;
+			points.push( 2, 8, 3 ) ;
+			points.push( 5, 0, 0 ) ;
+			points.push( 7, 4, 0 ) ;
+			points.push( 3, 4, 4 ) ;
+			points.push( 5, 6, 0 ) ;
+			points.push( 4, 2, 0 ) ;
+
+			const colors = [];
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+			colors.push(69/255, 196/255, 103/255);
+
+			const geometry = new THREE.BufferGeometry();
+			geometry.setAttribute( 'position', new THREE.Float32BufferAttribute(points, 3) );
+			geometry.setAttribute( 'color', new THREE.Float32BufferAttribute(colors, 3) );
+			geometry.computeBoundingSphere();
+
+			const material = new THREE.LineBasicMaterial( { color: 0xffffff } );
+			const line = new THREE.Line( geometry, material );
+			const material2 = new THREE.PointsMaterial( { vertexColors: true } );
+
+			const pointscollection = new THREE.Points( geometry, material2 );
+			scene.add( line );
+			scene.add( pointscollection );
+
+
+			function animate() {
+				requestAnimationFrame( animate );
+
+				//line.rotation.x += 0.05;
+				line.rotation.y += 0.005;
+				//pointscollection.rotation.x += 0.005;
+				pointscollection.rotation.y += 0.005;
+				renderer.render( scene, camera );
+			};
+
+			animate();
+		</script>
+		<div id="info">
+			<h1>bkf2020 visualizer</h1>
+			<p>each dot represents a time I solved a problem in the cslog or mathlog; made with THREE.js</p>
+			<a href="visualcredits">credits</a> | <a href="/">home</a>
+			<details>
+				<summary>MIT License notice for three.js</summary>
+				<p>The MIT License</p>
+
+				<p>Copyright © 2010-2021 three.js authors</p>
+
+				<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+				of this software and associated documentation files (the "Software"), to deal
+				in the Software without restriction, including without limitation the rights
+				to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+				copies of the Software, and to permit persons to whom the Software is
+				furnished to do so, subject to the following conditions:</p>
+
+				<p>The above copyright notice and this permission notice shall be included in
+				all copies or substantial portions of the Software.</p>
+
+
+				<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+				IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+				FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+				AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+				LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+				OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+				THE SOFTWARE.</p>
+			</details>
+			<details>
+				<summary>MIT License for this file <code>visual.html</code></summary>
+				<p>The MIT License</p>
+
+				<p>Copyright © 2021 bkf2020</p>
+
+				<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+				of this software and associated documentation files (the "Software"), to deal
+				in the Software without restriction, including without limitation the rights
+				to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+				copies of the Software, and to permit persons to whom the Software is
+				furnished to do so, subject to the following conditions:</p>
+
+				<p>The above copyright notice and this permission notice shall be included in
+				all copies or substantial portions of the Software.</p>
+
+
+				<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+				IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+				FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+				AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+				LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+				OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+				THE SOFTWARE.</p>
+			</details>
+		</div>
+	</body>
+</html>
