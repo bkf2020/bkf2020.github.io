@@ -21,7 +21,7 @@
 		<script type="module">
 			import * as THREE from 'https://cdn.skypack.dev/three';
 			import { ConvexGeometry } from 'https://cdn.skypack.dev/three/examples/jsm/geometries/ConvexGeometry.js';
-			
+
 			const renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -36,7 +36,7 @@
 
 			const points = [];
 			const pointsConvex = [];
-			var problemsSolved = 65;
+			var problemsSolved = 67;
 			for(var i = 0; i < problemsSolved; i++) {
 				// random points on x^3 + y^3 + z = 1000
 				var x = Math.random() * 40 - 20;
@@ -61,11 +61,11 @@
 
 			const material = new THREE.PointsMaterial( { vertexColors: true } );
 			const pointscollection = new THREE.Points( geometry, material );
-			
+
 			const convexGeometry = new ConvexGeometry( pointsConvex );
 			const materialMesh = new THREE.MeshBasicMaterial( { color: 0x00ff00, opacity: 0.1, transparent: true } );
 			const mesh = new THREE.Mesh( convexGeometry, materialMesh );
-			
+
 			scene.add( pointscollection );
 			scene.add( mesh );
 
