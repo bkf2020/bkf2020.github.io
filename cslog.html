@@ -92,8 +92,15 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=897">USACO Cow Poetry</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					See my code <a href="https://codeberg.org/bkf2020/pages/raw/branch/main/poetry.cpp">here</a>.
+					I made the mistake of making <code>ways_group</code> too small. The size of that should be M.
+					I also used <code>unordered_map</code> and <code>unordered_set</code> because of the solution,
+					but I don't think it had that big of an impact. Originally, I did a O(NM) solution by updating
+					<code>ways_group</code> for every possible group size, and that TLE'd, but I think there was
+					a constant factor from <code>modpow</code> that made it too slow.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://cses.fi/problemset/task/1639">CSES Edit Distance</a></th>
