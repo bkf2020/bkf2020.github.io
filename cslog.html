@@ -136,13 +136,30 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=789">USACO MooTube</a></th>
-				<th class="ns">Not started</th>
-				<th>Should <a href="https://usaco.guide/gold/dsu?lang=cpp">read about DSU</a> before attempting.</th>
+				<th class="so">Solved</th>
+				<th>
+					Should <a href="https://usaco.guide/gold/dsu?lang=cpp">read about DSU</a> before attempting.
+					<a href="https://cp-algorithms.com/data_structures/disjoint_set_union.html">Another good DSU resource</a>.
+					For this problem, I <a href="http://www.usaco.org/current/data/sol_mootube_gold_jan18.html">used the solution</a>.
+					I had the idea of sorting the queries by largest weights (probably because I had done this problem before),
+					but I didn't think to sort the edges, and this prevented me from solving the problem.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=992">USACO Wormhole Sort</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					<a href="https://usaco.guide/problems/usaco-992-wormhole-sort/solution#solution-3---dsuuf">
+						Used this solution on USACO guide</a>.
+					The DSU solution I thought of was adding an edge, and then checking if
+					every node has the same parent. However, the correct solution is to
+					go through each node <code>i</code> and its parent <code>p[i]</code>
+					and add edges until both have the same parent.
+					Additionally, I made cycles which are formed by connecting <code>i</code>
+					to <code>p[i]</code>, but it is not needed to check every node in a cycle
+					having the same parent.
+					Will need to do more dsu problems this week (if possible) or next week.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=384">USACO Ski Course Rating</a></th>
@@ -156,8 +173,14 @@
 			</tr>
 			<tr>
 				<th><a href="https://cses.fi/problemset/task/1202">CSES Investigation</a></th>
-				<th class="ns">Not started</th>
-				<th>Should <a href="https://usaco.guide/gold/shortest-paths?lang=cpp">read about shortest paths</a> before attempting.</th>
+				<th class="so">Solved</th>
+				<th>
+					Should <a href="https://usaco.guide/gold/shortest-paths?lang=cpp">read about shortest paths</a> before attempting.
+					At first, I didn't think abou the problem seriously, so I took a quick look
+					at the <a href="https://usaco.guide/problems/cses-1202-investigation/solution">USACO guide solution</a>
+					and realized to use Dijsktra. I likely would have realized this as well, if I seriously thought of the problem.
+					I got wrong answer on my first submission because I didn't read that the flights are ONE-WAY.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://oj.uz/problem/view/JOI18_commuter_pass">JOI 2018 Commuter Pass</a></th>
