@@ -194,11 +194,33 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=717">USACO Why Did the Cow Cross the Road (Gold)</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					<a href="http://www.usaco.org/current/data/sol_visitfj_gold_feb17.html">
+						Used the solution for this problem</a>.
+					I originally thought of using dijsktra, but I only moved to the 4 adjacent cells.
+					This solution failed on the sample test case. I didn't realize that the proper solution
+					was to move "3 moves" at a time. (One move is moving from a cell to its 4 adjacent cells.)
+					Note that by moving "3 moves" at a time, it is possible to move from a cell to its adjacent cell.
+					We move 3 moves at a time because Bessie eats every 3 fields she visits.
+					If the distance to the end is less than two, Bessie doesn't need to eat again, so we
+					can just update the answer.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://cses.fi/problemset/task/1196">CSES Flight Routes</a></th>
+				<th class="so">Solved</th>
+				<th>
+					I used <a href="https://usaco.guide/problems/cses-1196-flight-routes/solution">the usaco.guide solution</a>.
+					I thought of using dijkstra for this problem, and maintaining a priority queue/multiset
+					for each node. I thought this was too slow, but the priority queue for each node has size
+					of at most 10... When implementing the solution, I skipped past a point without popping
+					the priority queue, even though the priority queue should be popped. Also, I printed
+					integers instead of long longs when printing out the answer.
+				</th>
+			</tr>
+			<tr>
+				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=971">USACO Moortal Cowmbat</a></th>
 				<th class="ns">Not started</th>
 				<th></th>
 			</tr>
