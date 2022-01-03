@@ -114,8 +114,21 @@
 			</tr>
 			<tr>
 				<th><a href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=944">Online Judge 10003 Cutting Sticks</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="sa">Seriously attempted</th>
+				<th>
+					<details>
+					<summary>My solution</summary>
+					First, sort the cuts and let the cuts in the input
+					be <code>cuts[1], cuts[2], ..., cuts[n]</code>.
+					Define <code>cuts[0] = 0</code> and <code>cuts[n + 1] = L</code>.
+					I defined <code>cost[i][j]</code> to be the cost
+					of placing the cuts between i and j (inclusive) between
+					<code>cuts[i - 1]</code> and <code>cuts[j + 1]</code>.
+					Then <code>cost[i][j] = min(cuts[j + 1] - cuts[i - 1] + cost[i][k - 1] + cost[k + 1][j]</code>
+					for all possible k. (If <code>k - 1 &lt; i</code> or <code>k + 1 &gt; i</code>, ignore it.)
+					</details>
+					However, this solution got wrong answer.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=839">USACO Talent Show</a></th>
