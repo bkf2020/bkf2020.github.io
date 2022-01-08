@@ -128,8 +128,17 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=971">USACO Moortal Cowmbat</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="sa">Seriously Attempted</th>
+				<th>
+					Took a while to come up with a solution for this problem.
+					First, I use Floyd-Warshall to find the minimum cost to change
+					from button i to button j. Then, I found the minimum cost
+					of changing the first i buttons in the combo to a letter j.
+					After that, I let <code>dp[i]</code> be the minimum cost for the first
+					i letters. The equation was
+					<code>dp[i] = min(dp[i - K], dp[i - K - 1], dp[i - K - 2], ...)</code>.
+					This is O(NK) and is therefore too slow.
+				</th>
 			</tr>
 		</table>
 		</details>
