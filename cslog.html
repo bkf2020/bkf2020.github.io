@@ -136,7 +136,8 @@
 					of changing the first i buttons in the combo to a letter j.
 					After that, I let <code>dp[i]</code> be the minimum cost for the first
 					i letters. The equation was
-					<code>dp[i] = min(dp[i - K], dp[i - K - 1], dp[i - K - 2], ...)</code>.
+					<code>dp[i] = min(dp[i - K] + cost, dp[i - K - 1] + cost, dp[i - K - 2] + cost, ...)</code>.
+					Here, <code>cost</code> represents the cost to change the last letters.
 					This is O(NK) and is therefore too slow.
 				</th>
 			</tr>
