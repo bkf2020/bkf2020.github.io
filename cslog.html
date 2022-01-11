@@ -78,6 +78,69 @@
 			I will try to finish that, and will assign problems if there
 			is time.
 		</p>
+		<p>
+			<b>Update:</b> Will assign problems for now.
+		</p>
+		<details>
+		<summary>Click to show table</summary>
+		<table>
+			<tr>
+				<th>Problem Link</th>
+				<th>Status</th>
+				<th>Additional Notes</th>
+			</tr>
+			<tr>
+				<th><a href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=944">Online Judge 10003 Cutting Sticks</a></th>
+				<th class="so">Solved</th>
+				<th>
+					<details>
+					<summary>My solution</summary>
+					First, sort the cuts and let the cuts in the input
+					be <code>cuts[1], cuts[2], ..., cuts[n]</code>.
+					Define <code>cuts[0] = 0</code> and <code>cuts[n + 1] = L</code>.
+					I defined <code>cost[i][j]</code> to be the cost
+					of placing the cuts between i and j (inclusive) between
+					<code>cuts[i - 1]</code> and <code>cuts[j + 1]</code>.
+					Then <code>cost[i][j] = min(cuts[j + 1] - cuts[i - 1] + cost[i][k - 1] + cost[k + 1][j])</code>
+					for all possible k. (If <code>k - 1 &lt; i</code> or <code>k + 1 &gt; i</code>, ignore it.)
+					</details>
+					However, this solution got wrong answer.
+					<p>
+					<u>Update:</u> After talking to another person, I redefined <code>cost[i][j]</code>
+					to be the cost of performing all cuts between positions
+					<code>cuts[i]</code> and <code>cuts[j]</code> on the piece of wood.
+					This caused the transition equation to become
+					<code>cost[i][j] = min(cuts[j] - cuts[i] + cost[i][k] + cost[k][j])</code>
+					for all possible k. 
+					</p>
+				</th>
+			</tr>
+			<tr>
+				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=839">USACO Talent Show</a></th>
+				<th class="sa">Seriously Attempted</th>
+				<th>
+					<p>
+					My first solution was to greedily add the cows with the highest ratios,
+					but I think it doesn't work because adding a cow with a lower ratio and lower weight
+					might result in a higher overall ratio. As a result, I used
+					<a href="http://www.usaco.org/current/data/sol_talent_gold_open18.html">
+						the USACO solution</a>, but I don't understand why <code>dp[k1]</code>
+					will always have the optimal value, because <code>dp[k]</code> can be updated
+					and it doesn't guarantee <code>dp[k1]</code> gets updated.
+					I believe if <code>dp[k]</code> can get updated by a cow with weight w,
+					<code>dp[k1]</code> can get updated for the same cow with weight w by using
+					<code>dp[k1 - w]</code> (or <code>dp[W]</code> if k1 = W).
+					</p>
+					<p>
+						<u>Update:</u> After talking to another person, I realized that
+						<code>dp[k1]</code> shouldn't get updated by the same cow that
+						<code>dp[k]</code> gets updated by. Still need to finish implementing this problem.
+					</p>
+				</th>
+			</tr>
+		</table>
+		</details>
+
 		<h2>Week of Jan 03, 2022 - Jan 09, 2022</h2>
 		<details>
 		<p>
