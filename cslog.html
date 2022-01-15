@@ -145,8 +145,21 @@
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=671">USACO Lasers and Mirrors</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Wrote a complicated solution. See <a href="https://codeberg.org/bkf2020/pages/src/branch/main/cpp/lasers.cpp">
+						the file</a>.
+					The mistakes I made were not including lines
+					25 and 26:
+					<p>
+					<code>
+					points.push_back({xl, yl});
+					points.push_back({xb, yb});
+					</code>
+					</p>
+					and on line 49 where I used <code>N</code>
+					instead of <code>points.size();</code>
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=899">USACO Shortcut</a></th>
