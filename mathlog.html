@@ -83,8 +83,39 @@
 			<tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2021_AIME_II_Problems#Problem_8">2021 AIME II Problem 8</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					<p>
+						My solution let P<sub>i, T</sub> be the probability of getting
+						the desired result if the ant is at a vertex of the top face
+						after i moves AND i - 1 moves. Similarly, let P<sub>i, B</sub>
+						be the probability of getting the desired result if the ant
+						is at a vertex of the bottom face after i moves AND i - 1 moves.
+					</p>
+					<p>
+						This meant P<sub>i, T</sub> = &frac12; P<sub>i + 1, T</sub> + &frac12; P<sub>i + 2, B</sub>,
+						because the ant can either stay on the top face, or it moves to the bottom face and stays
+						at the bottom face for an additional move.
+						Similarly, P<sub>i, B</sub> = &frac12; P<sub>i + 1, B</sub> + &frac12; P<sub>i + 2, T</sub>.
+					</p>
+					<p>
+						Using this, I calculated the values of P<sub>i,B</sub> and P<sub>i,T</sub> for
+						1 &le; i &le; 8. Note P<sub>8, B</sub> = 0 and P<sub>8, T</sub> = 1.
+					</p>
+					<p>
+						The answer was 2/3 * P<sub>1, B</sub> + 1/3 * P<sub>2, T</sub>, but I got
+						1/2 * P<sub>1, B</sub> + 1/2 * P<sub>2, T</sub>, since I thought the ant
+						only had 2 moves when it started, but it actually has 3 moves.
+					</p>
+					<p>
+						I realized that P<sub>i, T</sub> + P<sub>i, B</sub> = 1 and this can be
+						proved using recursion. This may motivate the idea behind
+						<a href="https://artofproblemsolving.com/wiki/index.php/2021_AIME_II_Problems/Problem_8#Solution_3_.28Faster_Recursion.29">
+							solution 3 on the AoPS wiki</a>.
+						<a href="https://artofproblemsolving.com/wiki/index.php/2021_AIME_II_Problems/Problem_8#Solution_3_.28Faster_Recursion.29">
+							That solution</a> is pretty similar to the solution I outlined here.
+					</p>
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2021_AIME_II_Problems#Problem_10">2021 AIME II Problem 10</a></th>
