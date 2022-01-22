@@ -1,26 +1,30 @@
 var totSeconds = 0;
 var timerInterval;
 
-function changeTimer() {
+function changeTimerToTotSeconds() {
 	var backup = totSeconds;
-	if(totSeconds >= 0) {
-		var seconds = totSeconds % 60;
-		totSeconds -= totSeconds % 60;
-		totSeconds /= 60;
-		var minutes = totSeconds % 60;
-		totSeconds -= totSeconds % 60;
-		totSeconds /= 60;
-		var hours = totSeconds;
-		var hoursString = hours.toString();
-		var minutesString = minutes.toString();
-		var secondsString = seconds.toString();
-		if(hoursString.length === 1) hoursString = "0" + hoursString;
-		if(minutesString.length === 1) minutesString = "0" + minutesString;
-		if(secondsString.length === 1) secondsString = "0" + secondsString;
-		var timeToDisplay = hoursString + ":" + minutesString + ":" + secondsString;
-		document.getElementById("timeLeft").innerText = timeToDisplay;
-		backup--;
-		totSeconds = backup;
+	var seconds = totSeconds % 60;
+	totSeconds -= totSeconds % 60;
+	totSeconds /= 60;
+	var minutes = totSeconds % 60;
+	totSeconds -= totSeconds % 60;
+	totSeconds /= 60;
+	var hours = totSeconds;
+	var hoursString = hours.toString();
+	var minutesString = minutes.toString();
+	var secondsString = seconds.toString();
+	if(hoursString.length === 1) hoursString = "0" + hoursString;
+	if(minutesString.length === 1) minutesString = "0" + minutesString;
+	if(secondsString.length === 1) secondsString = "0" + secondsString;
+	var timeToDisplay = hoursString + ":" + minutesString + ":" + secondsString;
+	document.getElementById("timeLeft").innerText = timeToDisplay;
+	totSeconds = backup;
+}
+
+function updateTotSeconds() {
+	if(totSeconds > 0) {
+		totSeconds--;
+		changeTimerToTotSeconds();
 	} else {
 		clearInterval(timerInterval);
 		document.getElementById("timesUp").load();
@@ -47,8 +51,8 @@ function stopWorking() {
 		minutes = Number(minutes);
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
-		changeTimer();
-	} else if(totSeconds < 0) {
+		changeTimerToTotSeconds();
+	} else if(totSeconds <= 0) {
 		message = "Choose one of the following punishments:\n";
 		message += "- Do burpees for one minute\n";
 		message += "- Do 30 pushups\n";
@@ -71,7 +75,7 @@ function stopWorking() {
 		minutes = Number(minutes);
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
-		changeTimer();
+		changeTimerToTotSeconds();
 	}
 }
 
@@ -87,8 +91,8 @@ function startWorking() {
 		minutes = Number(minutes);
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
-		changeTimer();
-		timerInterval = setInterval(changeTimer, 1000);
+		changeTimerToTotSeconds();
+		timerInterval = setInterval(updateTotSeconds, 1000);
 
 	} else {
 		var message = "Invalid time! You can have at least 0 hours,";
