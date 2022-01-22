@@ -1,5 +1,7 @@
 var totSeconds = 0;
 var timerInterval;
+var timeLeftInMilliseconds;
+var endTime;
 
 function changeTimerToTotSeconds() {
 	var backup = totSeconds;
@@ -22,8 +24,9 @@ function changeTimerToTotSeconds() {
 }
 
 function updateTotSeconds() {
-	if(totSeconds > 0) {
-		totSeconds--;
+	timeLeftInMilliseconds = endTime - Date.now();
+	totSeconds = Math.ceil(timeLeftInMilliseconds / 1000);
+	if(totSeconds >= 0) {
 		changeTimerToTotSeconds();
 	} else {
 		clearInterval(timerInterval);
@@ -40,7 +43,8 @@ function pauseTimer() {
 }
 
 function resumeTimer() {
-	timerInterval = setInterval(updateTotSeconds, 1000);
+	endTime = Date.now() + timeLeftInMilliseconds;
+	timerInterval = setInterval(updateTotSeconds, 100);
 	document.getElementById("startpause").onclick = pauseTimer;
 	document.getElementById("startpause").innerText = "Pause timer";
 }
@@ -56,8 +60,10 @@ function startTimer() {
 		minutes = Number(minutes);
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
+		timeLeftInMilliseconds = totSeconds * 1000;
+		endTime = Date.now() + timeLeftInMilliseconds;
 		changeTimerToTotSeconds();
-		timerInterval = setInterval(updateTotSeconds, 1000);
+		timerInterval = setInterval(updateTotSeconds, 100);
 
 	} else {
 		var message = "Invalid time! You can have at least 0 hours,";
