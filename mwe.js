@@ -20,6 +20,7 @@ function changeTimerToTotSeconds() {
 	if(secondsString.length === 1) secondsString = "0" + secondsString;
 	var timeToDisplay = hoursString + ":" + minutesString + ":" + secondsString;
 	document.getElementById("timeLeft").innerText = timeToDisplay;
+	document.title = timeToDisplay + " -- MWE: Make work easier by Be kind for 2020 (bkf2020)";
 	totSeconds = backup;
 }
 
@@ -55,6 +56,7 @@ function stopWorking() {
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
 		changeTimerToTotSeconds();
+		document.title = "MWE: Make work easier by Be kind for 2020 (bkf2020)";
 	} else if(totSeconds < 0) {
 		message = "Choose one of the following punishments:\n";
 		message += "- Do burpees for one minute\n";
@@ -79,6 +81,7 @@ function stopWorking() {
 		seconds = Number(seconds);
 		totSeconds = 3600 * hours + 60 * minutes + seconds;
 		changeTimerToTotSeconds();
+		document.title = "MWE: Make work easier by Be kind for 2020 (bkf2020)";
 	}
 	endTime = Date.now() + timeLeftInMilliseconds;
 }

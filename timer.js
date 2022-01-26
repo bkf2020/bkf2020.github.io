@@ -20,6 +20,7 @@ function changeTimerToTotSeconds() {
 	if(secondsString.length === 1) secondsString = "0" + secondsString;
 	var timeToDisplay = hoursString + ":" + minutesString + ":" + secondsString;
 	document.getElementById("timeLeft").innerText = timeToDisplay;
+	document.title = timeToDisplay + " -- Be kind for 2020 (bkf2020)'s Timer";
 	totSeconds = backup;
 }
 
@@ -87,4 +88,5 @@ function resetTimer() {
 	seconds = Number(seconds);
 	totSeconds = 3600 * hours + 60 * minutes + seconds;
 	changeTimerToTotSeconds();
+	document.title = "Be kind for 2020 (bkf2020)'s Timer";
 }
