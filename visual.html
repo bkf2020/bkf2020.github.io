@@ -20,7 +20,7 @@
 	<body>
 		<script type="module">
 			import * as THREE from 'https://cdn.skypack.dev/three';
-			import { ConvexGeometry } from 'https://cdn.skypack.dev/three/examples/jsm/geometries/ConvexGeometry.js';
+			//import { ConvexGeometry } from 'https://cdn.skypack.dev/three/examples/jsm/geometries/ConvexGeometry.js';
 
 			const renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
@@ -38,10 +38,10 @@
 			const pointsConvex = [];
 			var problemsSolved = 90;
 			for(var i = 0; i < problemsSolved; i++) {
-				// random points on x^3 + y^3 + z = 1000
-				var x = Math.random() * 40 - 20;
-				var y = Math.random() * 40 - 20;
-				var z = Math.cbrt(1000 - x*x*x - y*y*y);
+				// random points on 25 by 25 by 25 cube
+				var x = Math.random() * 50 - 25;
+				var y = Math.random() * 50 - 25;
+				var z = Math.random() * 50 - 25;
 
 				points.push(x, y, z);
 				pointsConvex.push(new THREE.Vector3(x, y, z));
@@ -62,19 +62,19 @@
 			const material = new THREE.PointsMaterial( { vertexColors: true } );
 			const pointscollection = new THREE.Points( geometry, material );
 
-			const convexGeometry = new ConvexGeometry( pointsConvex );
-			const materialMesh = new THREE.MeshBasicMaterial( { color: 0x00ff00, opacity: 0.1, transparent: true } );
-			const mesh = new THREE.Mesh( convexGeometry, materialMesh );
+			//const convexGeometry = new ConvexGeometry( pointsConvex );
+			//const materialMesh = new THREE.MeshBasicMaterial( { color: 0x00ff00, opacity: 0.1, transparent: true } );
+			//const mesh = new THREE.Mesh( convexGeometry, materialMesh );
 
 			scene.add( pointscollection );
-			scene.add( mesh );
+			//scene.add( mesh );
 
 
 
 			function animate() {
 				requestAnimationFrame( animate );
-				pointscollection.rotation.y += 0.005;
-				mesh.rotation.y += 0.005;
+				pointscollection.rotation.y += 0.004;
+				//mesh.rotation.y += 0.005;
 				renderer.render( scene, camera );
 			};
 
