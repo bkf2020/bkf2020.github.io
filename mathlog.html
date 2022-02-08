@@ -84,13 +84,47 @@
 			<tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_9">2020 AIME II Problem 9</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					My original solution was wrong because
+					<ol>
+						<li>it assumed the people sitting together have to be adjacent, and</li>
+						<li>the people sitting together have a fixed position, but they can move around.</li>
+					</ol>
+					I used
+					<a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_9#Solution_2_.28Official_MAA.29">
+						the official MAA solution</a> and I completed it by hand as well.
+					But, I think I could have tried harder, so I'm just marking this as 'started'.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_10">2020 AIME II Problem 10</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					<p>
+						My original solution  was wrong, because it assumed 4 would always have a modulo inverse
+						mod <code>n + 5</code>, but this may not always be true.
+						So, I glanced at
+						<a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_10#Solution_3_.28Official_MAA_1.29">
+							MAA solution 1</a> and completed a similiar solution.
+					</p>
+					<p>
+						But, this new approach was wrong because it forgot to test the values of n.
+					
+						Just because <code>n^2(n+1)^2</code> leaves a remainder of 68 mod <code>n + 5</code>
+						does NOT mean <code>n^2(n+1)^2/4</code> leaves a remainder of 17 mod <code> n + 5</code>.
+						Also, I forgot that we needed <code>n + 5 &gt; 17</code>,
+						but this did not matter here, and checking the values of n would be an additional measure
+						against this mistake.
+					</p>
+					<p>
+						Lastly, checking the values of n wasn't as tedious as it looked, but I should be careful here, since
+						the computation isn't super trivial.
+					</p>
+					<p>
+						Leaving it as 'started' because I could have thought more.
+					</p>
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_11">2021 AIME II Problem 11</a></th>
