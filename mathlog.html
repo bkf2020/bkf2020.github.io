@@ -128,8 +128,38 @@
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_11">2021 AIME II Problem 11</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					<p>
+					Avoided getting stuck on one approach for this problem.
+					I believe I noticed that I wasn't using the fact that the entire
+					P(x) polynomial was given, so I wrote
+					<ul>
+						<li><code>P(x) = x^2 - 3x - 7</code></li>
+						<li><code>Q(x) = x^2 - ax + 2</code></li>
+						<li><code>R(x) = x^2 - bx + c</code></li>
+					</ul>
+					and found the corresponding values of <code>P + Q</code>, <code>P + R</code>,
+					and <code>Q + R</code>.
+					</p>
+					<p>
+					Then, I used this fact from the problem:
+					<ul>
+						<li><code>P + Q = 2(x - p)(x - q)</code></li>
+						<li><code>P + R = 2(x - p)(x - r)</code></li>
+						<li><code>Q + R = 2(x - q)(x - r).</code></li>
+					</ul>
+					This is because pairs of <code>P + Q</code>, <code>P + R</code>,
+					and <code>Q + R</code> share the same roots, but these common roots are distinct.
+					</p>
+					<p>
+					After that, I found <code>p + q, pq, p + r, pr, q + r, qr</code> in terms of
+					<code>a, b, c</code>, and so on...
+					</p>
+					<p>
+					The resulting solution was similiar to <a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems/Problem_11#Solution_1">
+						Solution 1 on the AoPS wiki</a>.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_I_Problems#Problem_9">2021 AIME I Problem 9</a></th>
