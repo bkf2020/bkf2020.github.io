@@ -84,8 +84,39 @@
 			<tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1185">USACO 2022 January Gold Drought</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="sa">Seriously attempted</th>
+				<th>
+					<p>
+					I only can solve this problem if N is even.
+					</p>
+					<p>
+					To do this, I let <code>dp[i][a]</code> be the number of ordered tuples
+					<code>(h[i], ..., h[N])</code> from cows i to N with <code>h[i] &ge; a</code>.
+					</p>
+					<p>
+					Then, it is easy to get the values for <code>dp[N - 2][a]</code> (2 cow case).
+					After that I loop through values of <code>i</code> from <code>N - 4</code> to <code>0</code>
+					(decreasing by 2 each time), and for each value of <code>i</code>,
+					I loop through values of <code>a</code> from <code>H[i]</code> to <code>0</code>
+					(decreasing by 1 each time). I set <code>dp[i][a] = dp[i][a + 1]</code>
+					The cow at <code>i + 1</code> has a value <code>b</code> and for each value of <code>a</code>,
+					I loop through values of <code>b</code> from <code>a</code> to <code>H[i + 1]</code>.
+					For each value of <code>b</code>, I update
+					<code>dp[i][a] += dp[i + 2][0] - dp[i + 2][max(H[i + 2] - b + a + 1, 0)]</code>.
+					</p>
+					<p>
+					What we do here is make cows <code>i + 1</code> and <code>i + 2</code> equal to <code>a</code>
+					by subtracting <code>b - a</code> from them. Thus, cow <code>i + 2</code> can be at most
+					<code>H[i + 2] - b + a</code>. If <code>H[i + 2] - b + a + 1</code> is negative, I just use 0 instead.
+					</p>
+					<p>
+					The mistake I made was that <code>dp[i][a]</code> could be negative because of the mod. (I found out 
+					with the USACO test data.) Thus, I need to do <code>dp[i][a] += MOD</code> to combat this issue.
+					</p>
+					<p>
+					I only pass the sample input if N is odd.
+					</p>
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1186">USACO 2022 January Gold Farm Updates</a></th>
