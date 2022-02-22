@@ -83,13 +83,49 @@
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_12">2020 AIME II Problem 12</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					<p>
+					Let O be the center of the square with label 2000 and ABCD be the square with label 1099. Let P be
+					the center of the square with label 200.
+					Then one of these two cases can occur:
+					<pre><code>
+			P
+	A--B
+	|  |
+	C--D
+O
+					</code></pre>
+					<pre><code>
+P
+	A--B
+	|  |
+	C--D
+		O
+					</code></pre>
+					In the first case, we need the slope of OP to be between the slopes of OA and OD in order for OP to intersect
+					the square. Similarly, in the second case, we need the slope of OP to be between the slopes of OB and OC.
+					This is one fact I noticed.
+					</p>
+					<p>
+					Another fact I noticed was that ceil(1099/n) gave the row the square with label 1099 should be in,
+					and this may be used with the first fact to calculate the slopes, but that would be very messy.
+					Need to try more.
+					</p>
+				</th>
+			</tr>
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2020_AIME_II_Problems#Problem_13">2020 AIME II Problem 13</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Solved with a bashy solution. Got 2arctan(2/r) + arctan(3/r) + 2arctan(4/r) = 180.
+					Then, found this in terms of r using
+					<a href="https://artofproblemsolving.com/wiki/index.php/Trigonometric_identities#Angle_addition_identities">
+						tangent sum of angle formulas</a> and solved for the value or r. Might spend some time
+					finding cleaner solutions.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://artofproblemsolving.com/wiki/index.php/2022_AIME_I_Problems#Problem_4">2022 AIME I Problem 4</a></th>
