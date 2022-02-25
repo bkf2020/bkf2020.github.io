@@ -83,8 +83,14 @@
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1065">2020 USACO December Gold Problem 1 Replication</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					I have the idea of floodfill, but when robots
+					replicate, I'm not sure how to expand the floodfill.
+					Also, with the possibility of D not being 1, it is
+					harder to update the floodfill. I tried thinking of
+					brute force, but it's difficult to implement cleanly.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1066">2020 USACO December Gold Problem 2 Bovine Genetics</a></th>
@@ -122,8 +128,29 @@
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1115">2021 USACO Feb Gold Problem 3 Count the Cows</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="s">Started</th>
+				<th>
+					<p>
+						Let X represent how the pasture looks for 0 &le; x, y &le; 3<sup>n</sup> for some <var>n</var>.
+						Let O represent an empty pasture for 0 &le; x, y &le; 3<sup>n</sup> for the same <var>n</var>.
+						Then the pasture for 0 &le; x, y &le; 3<sup>n + 1</sup> looks like this:
+					</p>
+
+					<pre><code>XOX
+OXO
+XOX</code></pre>
+
+					<p>
+						n = 2 may suggest this idea, but I got this idea from writing a simple script to visualize the pattern.
+						I had the idea of doing this, because there must be some kind of pattern if you want to solve
+						this problem efficiently. I believe this is NOT against the USACO rules, so I can do this during a contest.
+						<u>I DID NOT SOLVE THIS PROBLEM DURING AN OFFICIAL CONTEST</u>.
+					</p>
+					<p>
+						<a href="https://codeberg.org/bkf2020/pages/src/branch/main/cpp/count_visual.cpp">
+							Code for the script</a>
+					</p>
+				</th>
 			</tr>
 		</table>
 		</details>
