@@ -128,7 +128,7 @@
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1115">2021 USACO Feb Gold Problem 3 Count the Cows</a></th>
-				<th class="s">Started</th>
+				<th class="so">Solved</th>
 				<th>
 					<p>
 						Let X represent how the pasture looks for 0 &le; x, y &le; 3<sup>n</sup> for some <var>n</var>.
@@ -149,6 +149,36 @@ XOX</code></pre>
 					<p>
 						<a href="https://codeberg.org/bkf2020/pages/src/branch/main/cpp/count_visual.cpp">
 							Code for the script</a>
+					</p>
+					<p>
+						After I wrote the script, I came up with the following idea:
+						Let <code>num_cows(x, y, d)</code>
+						count the number of cows from (x, y) to (x + d, y + d).
+					</p>
+					<p>
+						Then, we can enclose all such cows within a
+						3<sup>n</sup> by 3<sup>n</sup> grid. We
+						can find n using binary search.
+					</p>
+					<p>
+						As mentioned earlier, we can split the
+						3<sup>n</sup> by 3<sup>n</sup> grid into
+						smaller 
+						3<sup>n - 1</sup> by 3<sup>n - 1</sup> grids,
+						and we can find the places the diagonal intersects
+						these grids.
+					</p>
+					<p>
+						Thus, we split up the original problem into
+						many smaller problems.
+					</p>
+					<p>
+						This is a rough outline, but my implemenation
+						was quit messy. It gets accepted but is
+						borderline TLE.
+					</p>
+						<a href="https://codeberg.org/bkf2020/pages/src/branch/main/cpp/count.cpp">
+							View the Code</a>
 					</p>
 				</th>
 			</tr>
