@@ -83,8 +83,18 @@
 			</tr>
 			<tr>
 				<th><a href="https://codeforces.com/problemset/problem/1646/D">Codeforces Weight The Tree</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="sa">Seriously attempted</th>
+				<th>
+					My idea is to try to weight all nodes that are currently
+					unweighted and are only connected to zero or one other
+					unweighted nodes. This is done by setting those nodes to the sum
+					of their already weighted neighbors, and setting the ONE node they
+					are connected to to weight one (if it exists).
+					If there is a component with ONLY two unweighted nodes connected,
+					then we should consider the two possible ways to weight one of the
+					nodes as 1. However, this does not guarantee the minimal
+					possible sum of weights. Not sure what is wrong yet.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="https://codeforces.com/problemset/problem/1641/B">Codeforces Repetitions Decoding</a></th>
