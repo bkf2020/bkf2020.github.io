@@ -72,6 +72,53 @@
 		</table>
 		</details>
 		-->
+		<h2>Week of Apr 04, 2022 - Apr 10, 2022</h2>
+		<details>
+		<summary>Click to show table</summary>
+		<table>
+			<tr>
+				<th>Problem Link</th>
+				<th>Status</th>
+				<th>Additional Notes</th>
+			</tr>
+			<tr>
+				<th><a href="https://codeforces.com/problemset/problem/1646/D">Codeforces Weight The Tree</a></th>
+				<th class="so">Solved</th>
+				<th>
+					<p>
+					My idea is to try to weight all nodes that are currently
+					unweighted and are only connected to zero or one other
+					unweighted nodes. This is done by setting those nodes to the sum
+					of their already weighted neighbors, and setting the ONE node they
+					are connected to to weight one (if it exists).
+					If there is a component with ONLY two unweighted nodes connected,
+					then we should consider the two possible ways to weight one of the
+					nodes as 1. However, this does not guarantee the minimal
+					possible sum of weights. Not sure what is wrong yet.
+					</p>
+
+					<p>
+						Found a failing test case using <a href="https://cfstress.com/">CF Stress</a>.
+						I ended up using the editorial to figure out what I was missing.
+						I basically got the observation that all bad nodes should be set to one,
+						and all good nodes are a sum of their neighbors, but didn't use
+						this to motivate a tree-dp.
+					</p>
+				</th>
+			</tr>
+			<tr>
+				<th><a href="https://codeforces.com/problemset/problem/1641/B">Codeforces Repetitions Decoding</a></th>
+				<th class="ns">Not started</th>
+				<th></th>
+			</tr>
+			<tr>
+				<th><a href="https://codeforces.com/problemset/problem/1634/D">Codeforces Finding Zero</a></th>
+				<th class="ns">Not started</th>
+				<th></th>
+			</tr>
+		</table>
+		</details>
+
 		<h2>Week of Mar 28, 2022 - Apr 03, 2022</h2>
 		<details>
 		<summary>Click to show table</summary>
