@@ -83,8 +83,22 @@
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1162">2021 USACO Dec Gold HILO</a></th>
-				<th class="ns">Not started</th>
-				<th></th>
+				<th class="so">Solved</th>
+				<th>
+					Solved using 3 segment trees: one
+					which stores the indices i with
+					i &gt; x + 0.5, one which stores
+					the remaining indices not in the
+					original array, and one which
+					stores if there is a HI before
+					a certain LO. I used tags for lazy
+					propagation, and I found that
+					if I wanted to set a section of
+					a segment tree to zero, it wouldn't
+					work because I wanted the tags
+					to be GREATER than zero. Fixed
+					by making the tags default to -1.
+				</th>
 			</tr>
 			<tr>
 				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1161">2021 USACO Dec Gold Paired Up</a></th>
