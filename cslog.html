@@ -72,6 +72,61 @@
 		</table>
 		</details>
 		-->
+		<h2>Week of May 02, 2022 - May 08, 2022</h2>
+		<details>
+		<summary>Click to show table</summary>
+		<table>
+			<tr>
+				<th>Problem Link</th>
+				<th>Status</th>
+				<th>Additional Notes</th>
+			</tr>
+			<tr>
+				<th><a href="http://usaco.org/index.php?page=viewproblem2&cpid=1161">2021 USACO Dec Gold Paired Up</a></th>
+				<th class="so">Solved</th>
+				<th>
+					<p>
+						First, I read the first sentence of
+						<a href="http://usaco.org/current/data/sol_prob1_gold_dec21.html">the solution</a>
+						to get a hint on how to solve this problem.
+						<q>
+							Let's call two adjacent cows "linked" if they are able
+							to pair up with each other. We can split the cows up into
+							chains where each pair of adjacent cows in a chain are linked,
+							and no two cows in different chains are linked. 
+						</q>
+					</p>
+					<p>
+						Using this idea, I was able to solve the T = 1 case correctly,
+						and my solution the T = 2 case was pretty similar to the solution.
+						However, it was wrong and more complicated. After reading the solution,
+						I understood that if there are an ODD number of cows already unpaired, and
+						you leave an unpaired cow <var>i</var> at an EVEN index,
+						then you must pair up cows <var>i - 1</var> and <var>i + 1</var>. If there are an
+						ODD number of cows already unpaired and you leave an unpaired cow at an ODD index,
+						you must pair up an even number of adjacent cows (0 is fine).
+					</p>
+					<p>
+						Similarly, I understood that if there are an EVEN number of cows already unpaired, and
+						you leave an unpaired cow <var>i</var> at an ODD index,
+						then you must pair up cows <var>i - 1</var> and <var>i + 1</var>. If there are an
+						EVEN number of cows already unpaired and you leave an unpaired EVEN at an even index,
+						you must pair up an even number of adjacent cows (0 is fine).
+					</p>
+					<p>
+						This approach lets you transition <code>dp[i][j] = dp[i + 1][j]</code> instead of
+						<code>dp[i][j] = dp[i + 2][j]</code> (which is what I did in my original solution).
+					</p>
+					<p>
+						If the current number of cows already unpaired DOES NOT have the SAME PARITY of
+						the total number of cows in a link, then we MUST be able to pair up addition
+						cows. Otherwise, we don't consider it.
+					</p>
+				</th>
+			</tr>
+		</table>
+		</details>
+
 		<h2>Week of Apr 25, 2022 - May 01, 2022</h2>
 		<details>
 		<summary>Click to show table</summary>
