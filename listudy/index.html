@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Be kind for 2020 (bkf2020)'s Website!</title>
+	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" src="listudy.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Listudy: Be kind for 2020 (bkf2020)'s Website!</h1>
+		<p>Simple, free, open source tool that gives you written quiz questions given flashcards.</p>
+		<p>
+			<a href="/">home</a>
+		</p>
+	</header>
+	<article>
+		<details open>
+			<summary>Hide step one and two</summary>
+		<h2>Step one: generate flashcards</h2>
+		<p>Enter your flashcards here (terms should come before definitions):</p>
+		<textarea id="flashcards" name="flashcards" rows="10" cols="50"></textarea>
+		<p>Regex to seperate terms from definitions: <input type="text" id="regex" name="regex"></p>
+		<p>Trim spaces at start and end of terms and definitions?
+			<input type="radio" id="yesRadio" name="trim" value="trim" checked>
+			<label for="termRadio">Yes</label>
+			<input type="radio" id="noRadio" name="trim" value="trim">
+			<label for="defRadio">No</label>
+		</p>
+		<button onclick="generateFlashcards()">Create flashcards</button>
+		<div id="flashcardsDiv" style="display: none;">
+			<h3>Flashcards</h3>
+			<details open>
+			<summary>Flash cards table</summary>
+			<table id="flashcardsTable" style="font-size: small;">
+				<tbody id="flashcardsTbody">
+					<tr>
+						<th>Term</th>
+						<th>Definition</th>
+					</tr>
+				</tbody>
+			</table>
+			</details>
+		</div>
+
+		<h2>Step two: decide on tests lengths</h2>
+		<p>How many groups? <input type="number" id="numberGroups" name="numberGroups" min="1"></p>
+		<p>Answer <b>with</b> term or definition? 
+			<input type="radio" id="termRadio" name="studyMethod" value="studyMethod" checked>
+			<label for="termRadio">Term</label>
+			<input type="radio" id="defRadio" name="studyMethod" value="studyMethod">
+			<label for="defRadio">Definition</label>
+		</p>
+		<button onclick="startQuiz()">Start learning!</button>
+		</details>
+
+		<h2>Step three: Learn!</h2>
+		<div id="quizDiv" style="display: none; text-align: center;">
+			<p>
+				<button onclick="prevGroup()">Prev group</button>
+				<span id="group"><b>Group <span id="currGroup"></span> out of <span id="totGroup"></span></b></span>
+				<button onclick="nextGroup()">Next group</button>
+			</p>
+			<p id="question"></p>
+			<input type="text" id="answer" name="answer"><br/><br/>
+			<button id="checkOrMove" onclick="checkQuestion()">Submit (or select the text field and press enter)!</button>
+			<div id="answersDiv" style="display: none;">
+				<p><b>Verdict:</b> <span id="verdict"></span></p>
+				<p>
+					<b>Your answer:</b> <span id="userAnswer" style="color: pink;"></span>;
+					<b>Correct answer:</b> <span id="correctAnswer" style="color: lightblue;"></span>
+				</p>
+				<p><b>Diff:</b> <span id="diff"></span></p>
+			</div>
+			<h3>Terms in current group</h3>
+			<ul id="termsCurrGroup"></ul>
+		</div>
+		<script type="module">
+			import * as Diff from 'https://cdn.skypack.dev/diff';
+			document.getElementById("checkOrMove").addEventListener("click", function() {
+				if(document.getElementById("answersDiv").style.display === "inherit") {
+					var userAnswer = document.getElementById("userAnswer").innerText;
+					var correctAnswer = flashcards[flashcardsIndex][1];
+					const diff = Diff.diffChars(userAnswer, correctAnswer);
+
+					var newSpan = document.createElement("span");
+					newSpan.id = "diff";
+
+					diff.forEach((part) => {
+						var spanPart = document.createElement("span");
+						if(part.added) spanPart.style.color = "springgreen";
+						else if(part.removed) {
+							spanPart.style.color = "tomato";
+							spanPart.style.textDecoration = "line-through";
+						}
+
+						spanPart.innerText = part.value;
+						newSpan.appendChild(spanPart);
+					});
+					var span = document.getElementById("diff");
+					span.parentNode.replaceChild(newSpan, span);
+				}
+			}); 
+		</script>
+		<script>
+			function docEnter(e) {
+	 	   		if(document.activeElement.id ==="answer" && e.key === 'Enter') {
+					document.getElementById("checkOrMove").click();
+	  			}
+			}
+			document.addEventListener('keyup', docEnter, false);
+		</script>
+	</article>
+
+	<footer>
+		<p>
+			<a href="/">home</a>
+		</p>
+		<p>
+			all code/content on this website is under CC0
+			unless otherwise stated.
+		</p>
+		<p>
+			other projects I have may have different licenses
+		</p>
+	</footer>
+</body>
+</html>
