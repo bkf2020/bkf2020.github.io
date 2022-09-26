@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Listudy QUIZ: Be kind for 2020 (bkf2020)'s Website!</title>
+	<link rel="stylesheet" href="../style.css">
+	<script type="text/javascript" src="quiz.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Listudy <i style="color: lightskyblue;">QUIZ:</i> Be kind for 2020 (bkf2020)'s Website!</h1>
+		<p>
+            Simple, free, open source tool that gives you a
+            <b style="color: lightskyblue; font-size: larger;">QUIZ</b> on flashcards.
+        </p>
+		<p>
+			<a href="/">bkf2020's website home</a>
+		</p>
+	</header>
+	<article>
+		<p>
+            <a href="." style="font-size: x-large;">Want to
+            <b style="color: lightskyblue;">LEARN</b> the flashcards,
+            <b style="color: coral;">INSTEAD</b>? Click here!</a>
+        </p>
+		<details open>
+			<summary>Hide step one and two</summary>
+		<h2>Step one: generate flashcards</h2>
+		<p>Enter your flashcards here (terms should come before definitions):</p>
+		<textarea id="flashcards" name="flashcards" rows="10" cols="50"></textarea>
+		<p>Regex to seperate terms from definitions: <input type="text" id="regex" name="regex"></p>
+		<p>Trim spaces at start and end of terms and definitions?
+			<input type="radio" id="yesRadio" name="trim" value="trim" checked>
+			<label for="termRadio">Yes</label>
+			<input type="radio" id="noRadio" name="trim" value="trim">
+			<label for="defRadio">No</label>
+		</p>
+		<button onclick="generateFlashcards()">Create flashcards</button>
+		<div id="flashcardsDiv" style="display: none;">
+			<h3>Flashcards</h3>
+			<details open>
+			<summary>Flash cards table</summary>
+			<table id="flashcardsTable" style="font-size: small;">
+				<tbody id="flashcardsTbody">
+					<tr>
+						<th>Term</th>
+						<th>Definition</th>
+					</tr>
+				</tbody>
+			</table>
+			</details>
+		</div>
+
+		<h2>Step two: decide on quiz options</h2>
+        <p>You will get a quiz will on <b><u>every</u></b> flashcard.</p>
+		<p>Answer <b>with</b> term or definition? 
+			<input type="radio" id="termRadio" name="studyMethod" value="studyMethod" checked>
+			<label for="termRadio">Term</label>
+			<input type="radio" id="defRadio" name="studyMethod" value="studyMethod">
+			<label for="defRadio">Definition</label>
+		</p>
+		<button onclick="startQuiz()">Start the quiz!</button>
+		</details>
+
+		<h2>Step three: quiz!</h2>
+        <div id="quizDiv" style="display: none;">
+            <ol id="quizList"></ol>
+            <p style="font-size: x-large; display: none;" id="numCorrect"></p>
+            <p style="font-size: x-large; display: none;" id="totalQuestions"></p>
+            <button id="checkQuiz" onclick="checkQuiz()">Check quiz!</button>
+        </div>
+		<script type="module">
+			import * as Diff from 'https://cdn.skypack.dev/diff';
+			document.getElementById("checkQuiz").addEventListener("click", function() {
+                for(var i = 0; i < flashcards.length; i++) {
+					var userAnswer = document.getElementById("userAnswerDisplay" + i.toString()).innerText;
+					var correctAnswer = flashcards[i][1];
+					const diff = Diff.diffChars(userAnswer, correctAnswer);
+
+					var newSpan = document.createElement("span");
+					newSpan.id = "diffDisplay" + i.toString();
+
+					diff.forEach((part) => {
+						var spanPart = document.createElement("span");
+						if(part.added) spanPart.style.color = "springgreen";
+						else if(part.removed) {
+							spanPart.style.color = "tomato";
+							spanPart.style.textDecoration = "line-through";
+						}
+
+						spanPart.innerText = part.value;
+						newSpan.appendChild(spanPart);
+					});
+					var span = document.getElementById("diffDisplay" + i.toString());
+					span.parentNode.replaceChild(newSpan, span);
+                }
+			});
+		</script>
+	</article>
+
+	<footer>
+		<p>
+			<a href="/">bkf2020's website home</a>
+		</p>
+		<p>
+			all code/content on this website is under CC0
+			unless otherwise stated.
+		</p>
+		<p>
+			other projects I have may have different licenses
+		</p>
+	</footer>
+</body>
+</html>
